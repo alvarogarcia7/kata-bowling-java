@@ -19,16 +19,25 @@ public class BowlingEngine {
 		int result = ball1 + ball2;
 
 		if (wasLastAStrike()){
-			totalScore += ball1;
+			countThisFrameTwice(ball1, result);
+		} else {
+			countThisFrameOnce(result);
 		}
-
-		totalScore += result;
 
 		if (isStrike(ball1)){
 			previousStrike= true;
 		}
 
 		return result;
+	}
+
+	private void countThisFrameOnce (final int result) {
+		totalScore += result;
+	}
+
+	private void countThisFrameTwice (final int ball1, final int result) {
+		totalScore += ball1;
+		countThisFrameOnce(result);
 	}
 
 	private boolean isStrike(int ball){
