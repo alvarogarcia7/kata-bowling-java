@@ -18,7 +18,7 @@ public class BowlingEngine {
 
 		int result = ball1 + ball2;
 
-		if (wasThereAPreviousStrikeOrSpare()){
+		if (wasLastAStrike()){
 			totalScore += ball1;
 		}
 
@@ -34,7 +34,7 @@ public class BowlingEngine {
 	private boolean isStrike(int ball){
 		return ball == 10;
 	}
-	private boolean wasThereAPreviousStrikeOrSpare () {
+	private boolean wasLastAStrike () {
 		return previousStrike;
 	}
 
