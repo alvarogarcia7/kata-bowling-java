@@ -18,11 +18,10 @@ public class BowlingEngine {
 
 		int result = ball1 + ball2;
 
-		if (wasLastAStrike()){
-			countThisFrameTwice(ball1, result);
-		} else {
-			countThisFrameOnce(result);
+		if (wasLastAStrike()) {
+			countThisFrameTwice(ball1);
 		}
+		countThisFrameOnce(result);
 
 		if (isStrike(ball1)){
 			previousStrike= true;
@@ -35,9 +34,8 @@ public class BowlingEngine {
 		totalScore += result;
 	}
 
-	private void countThisFrameTwice (final int ball1, final int result) {
+	private void countThisFrameTwice (final int ball1) {
 		totalScore += ball1;
-		countThisFrameOnce(result);
 	}
 
 	private boolean isStrike(int ball){
