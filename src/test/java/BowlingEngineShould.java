@@ -13,6 +13,11 @@ public class BowlingEngineShould {
 		assertThat(throwBalls(0,0), is(0));
 	}
 
+	@Test
+	public void display_1_when_the_first_ball_drop_1_pin(){
+		assertThat(throwBalls(1), is(1));
+	}
+
 	private int throwBalls(int ball1, int ball2){
 		return 0;
 	}
