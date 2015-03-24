@@ -12,4 +12,8 @@ public class BowlingEngineShould {
 	public void return_0_when_no_pins_touched(){
 		assertThat(throwBalls(0,0), is(0));
 	}
+
+	private int throwBalls(int ball1, int ball2){
+		return 0;
+	}
 }
