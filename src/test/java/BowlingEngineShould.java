@@ -24,4 +24,9 @@ public class BowlingEngineShould {
 		assertThat(new BowlingEngine().throwBalls(0, 1), is(1));
 	}
 
+	@Test
+	public void not_mind_about_the_balls_results_order(){
+		assertThat(new BowlingEngine().throwBalls(0, 1), is(new BowlingEngine().throwBalls(1, 0)));
+	}
+
 }
