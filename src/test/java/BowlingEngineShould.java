@@ -19,4 +19,9 @@ public class BowlingEngineShould {
 		assertThat(new BowlingEngine().throwBalls(1, 0), is(1));
 	}
 
+	@Test
+	public void display_1_when_the_second_ball_drops_1_pin(){
+		assertThat(new BowlingEngine().throwBalls(0, 1), is(1));
+	}
+
 }
