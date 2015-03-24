@@ -10,6 +10,6 @@ public class BowlingEngine {
 	}
 
 	public Integer throwBalls (int ball1, int ball2) {
-		return 0;
+		return ball1;
 	}
 }
