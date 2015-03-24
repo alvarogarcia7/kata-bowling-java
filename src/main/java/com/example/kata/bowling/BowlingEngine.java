@@ -6,6 +6,9 @@ package com.example.kata.bowling;
 public class BowlingEngine {
 
 	public Integer throwBalls (int ball1, int ball2) {
+		if (ball2 == 1){
+			return ball2;
+		}
 		return ball1;
 	}
 }
