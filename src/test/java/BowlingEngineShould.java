@@ -37,4 +37,13 @@ public class BowlingEngineShould {
 		assertThat(sut.throwBalls(0, 1), is(sut.throwBalls(1, 0)));
 	}
 
+	@Test
+	public void display_score_when_striking_with_first_ball(){
+
+		sut.throwBalls(10,0);
+		sut.throwBalls(1,0);
+
+		assertThat(sut.getFrameScore(), is(12));
+	}
+
 }
