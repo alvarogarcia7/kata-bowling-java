@@ -7,21 +7,35 @@ public class BowlingEngine {
 
 	private Integer totalScore;
 
+	private boolean previousStrike;
+
 	public BowlingEngine(){
-		totalScore=0;
+		totalScore = 0;
+		previousStrike = false;
 	}
 
 	public Integer throwBalls (int ball1, int ball2) {
 
-		int realValueBall1 = ball1;
+		int result = ball1 + ball2;
 
-		if (totalScore != 0){
-			realValueBall1 *= 2;
+		if (wasThereAPreviousStrikeOrSpare()){
+			totalScore += ball1;
 		}
 
-		totalScore += realValueBall1 + ball2;
+		totalScore += result;
 
-		return ball1 + ball2;
+		if (isStrike(ball1)){
+			previousStrike= true;
+		}
+
+		return result;
+	}
+
+	private boolean isStrike(int ball){
+		return ball == 10;
+	}
+	private boolean wasThereAPreviousStrikeOrSpare () {
+		return previousStrike;
 	}
 
 	public Integer getFrameScore(){
